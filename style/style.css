@@ -1,12 +1,8 @@
 body, html {
     height: 100%;
-    font-family: 'Protest Strike', sans-serif;
     margin: 0;
     padding: 0;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Protest Strike', sans-serif;
     background-color: #f4f4f4;
     background-image: url('../images/mandolin_bg.jpg');
     background-size: cover; /* Cover the entire page */
@@ -14,29 +10,37 @@ body, html {
     background-repeat: no-repeat; /* Do not repeat the image */
 }
 
-#app {
-    position: relative;
-    text-align: center;
-    width: 100%;
-    padding: 20px;
+
+#app { /* Assuming #app is the parent container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Adjust based on your specific layout */
+    height: 100vh; /* Ensure it takes the full viewport height */
 }
 
 h1, h2, h3 {
     font-family: 'Protest Strike', sans-serif;
 }
 
+#imageContainer {
+    position: relative; /* Makes child elements with absolute positioning relative to this container */
+    width: 100%; /* Adjust based on your layout */
+    max-width: 500px; /* Example: Restrict the image's maximum width */
+    margin: auto; /* Center the container if needed */
+}
 
 #imageDisplay {
-    width: 125%;
+    width: 100%; /* Makes the image responsive, adjust as needed */
+    display: block; /* Removes bottom margin/spacing */
     height: auto; /* Maintain aspect ratio */
-    object-fit: contain;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 
 
 #navigation {
-    margin-top: 20px;
+    margin-bottom: 5px; /* Ensures 5px space below the buttons before the details container */
 }
 
 #navigation button {
@@ -62,6 +66,7 @@ h1, h2, h3 {
     position: absolute;
     top: 20%; /* Center vertically */
     left: 75%; /* Keep centering horizontally */
+    transform: translate(-50%, -50%); /* Center it based on its own size */
     font-size: 60px;
     color: #040000;
     background-color: rgba(255, 255, 255, 0.7);
@@ -75,21 +80,19 @@ h1, h2, h3 {
 
 
 #detailsContainer {
-    position: absolute; /* Ensure this is positioned relative to its first positioned (not static) ancestor element */
-    right: -30px;
-    top: -70px;
-    width: 500px; /* Set width to 500px */
-    height: 110px; /* Set height to 100px */
+    position: absolute; /* Positions it relative to #imageContainer */
+    top: 5px; /* Aligns the bottom of the container with the bottom of the image */
+   
     background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
     color: #050000;
     padding: 5px;
-    font-size: 16px;
+    font-size: 14px;
     overflow: hidden; /* Hide overflow */
-    border-radius: 25px;
+    border-radius: 0; /* Adjust as needed */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Optional: Adds shadow for depth */
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    justify-content: center; /* Centers content vertically inside the container */
 }
 
 
@@ -127,7 +130,6 @@ h1, h2, h3 {
 @media (max-width: 768px) {
     #detailsContainer {
         right: auto; /* Remove fixed right positioning */
-        top: -150px;
         left: 5px; /* Ensure it doesn't overflow off the left of the screen */
         font-size: 14px; /* Increase font size for readability */
         width: calc(100% - 10px); /* Adjust width to ensure 5px margin on both sides */
@@ -135,15 +137,26 @@ h1, h2, h3 {
         margin-bottom: 5px; /* Ensure 5px margin at the bottom */
     }
     #priceTag {
-        top: 60%; /* Adjust vertical position */
-        left: 50%; /* Center horizontally */
-        font-size: 40px; /* Adjust font size for smaller screens */
+        position: fixed;
+        left: 50%;
+        font-size: 60px; /* Adjust font size for readability on smaller screens */
+        z-index: 100; /* Ensure it's above other content */
     }
     #imageDisplay {
         width: 100%; /* Ensure it fits within smaller screens */
     }
     #detailsText {
         height: calc(1.4em * 3); /* Show 3 lines based on line-height */
+    }
+    #navigation {
+        position: fixed; /* Keep it fixed at the bottom */
+        bottom: 0; /* Align to the bottom of the viewport */
+        left: 0; /* Align to the left of the viewport */
+        width: 100%; /* Stretch across the full width of the viewport */
+        margin-top: 0; /* Remove any top margin */
+        z-index: 1000; /* Ensure it's above other content; adjust as needed */
+        /* Add a background if needed to enhance visibility over the content */
+    
     }
 
 }
