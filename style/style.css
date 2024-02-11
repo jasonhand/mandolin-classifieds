@@ -8,7 +8,7 @@ body, html {
     justify-content: center;
     align-items: center;
     background-color: #f4f4f4;
-    background-image: url('images/mandolin.jpg');
+    background-image: url('../images/mandolin_bg.jpg');
     background-size: cover; /* Cover the entire page */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the image */
