@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk:wght@400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="priceTag">Price: $100</div>
+        <!-- Navigation buttons moved above the image and details container -->
+        <img id="imageDisplay" src="" alt="Random Image" style="width:100%; max-width:600px; display: block; margin: 0 auto;">
+        <div id="detailsContainer">
+            <p id="detailsText">Image details will be shown here...</p>
+            <a id="readMore" href="https://mandolincafe.com" target="_blank">Read more</a>
+        </div>
+        <div id="navigation">
+            <button class="navigation" id="prev">Previous</button>
+            <button class="navigation" id="next">Next</button>
+        </div>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
