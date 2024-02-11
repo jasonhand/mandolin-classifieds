@@ -118,6 +118,7 @@ h1, h2, h3 {
     cursor: pointer; /* Change cursor to pointer to indicate clickable */
     text-decoration: none; /* Remove underline */
     padding-right: 10px; /* Add padding on the right side */
+    padding-bottom: 10px;
 }
 
 
@@ -125,18 +126,26 @@ h1, h2, h3 {
 
 @media (max-width: 768px) {
     #detailsContainer {
-        bottom: 50px; /* Adjust for smaller screens */
-        right: 10px; /* Prevent it from going off-screen */
+        right: auto; /* Remove fixed right positioning */
+        top: -150px;
+        left: 5px; /* Ensure it doesn't overflow off the left of the screen */
         font-size: 14px; /* Increase font size for readability */
+        width: calc(100% - 10px); /* Adjust width to ensure 5px margin on both sides */
+        max-width: 400px; /* Optional: Adjust max-width to limit container size */
+        margin-bottom: 5px; /* Ensure 5px margin at the bottom */
     }
     #priceTag {
-        top: 20%; /* Adjust vertical position */
+        top: 60%; /* Adjust vertical position */
         left: 50%; /* Center horizontally */
         font-size: 40px; /* Adjust font size for smaller screens */
     }
     #imageDisplay {
         width: 100%; /* Ensure it fits within smaller screens */
     }
+    #detailsText {
+        height: calc(1.4em * 3); /* Show 3 lines based on line-height */
+    }
+
 }
 
 
