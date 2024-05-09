@@ -1,6 +1,8 @@
 # Mandolin Classifieds Viewer
 Wrapper for MandolinCafe.com snapshot of classified listings
 
+![](images/screenshot.png)
+
 ## How to Use This Project
 
 1. Fork this repository.
